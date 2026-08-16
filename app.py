@@ -37,7 +37,7 @@ if st.button("Summarize!"):
                 model = "llama-3.3-70b-versalite",
                 messages = [
                     {"role" : "system" , "content" : f"you are a helpful assistant, summarize the text into 4 simple sentences, in {lang} language"},
-                    {"role" : "user" , "content" : text}
+                    {"role" : "user" , "content" : text_area}
                 ]
             )
             st.success(response.choices[0].message.content)
