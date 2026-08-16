@@ -5,7 +5,7 @@ from groq import Groq
 
 st.title("Summarize")
 
-client = Groq(api_key=st.secrets['Groq_Api_Key'])
+client = Groq(api_key=st.secrets["Groq_Api_Key"])
 
 files = st.file_uploader("upload your pdf", type=["pdf"]) 
 
@@ -14,7 +14,7 @@ if files is not None:
     pdf_text = ""
 
     for page in pdf_reader.pages:
-        pdf_text += page.extraxt_text() or ""
+        pdf_text += page.extract_text() or ""
 
     if pdf_text.strip():
         st.info(f"extracted from {len(pdf_reader.pages)} pages")
@@ -25,4 +25,3 @@ if files is not None:
 else:
     text_from_pdf = ""
 text_area = st.text_area("Or paste your text here:", height=200, value=text_from_pdf)
-st.button("Summarize!")
