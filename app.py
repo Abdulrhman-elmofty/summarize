@@ -5,7 +5,7 @@ from groq import Groq
 
 st.title("Summarize")
 
-client = Groq(api_key=st.secrets["Groq_Api_Key"])
+#client = Groq(api_key=st.secrets["Groq_Api_Key"])
 
 files = st.file_uploader("upload your pdf", type=["pdf"]) 
 
